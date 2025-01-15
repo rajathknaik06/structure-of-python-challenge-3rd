@@ -1,0 +1,58 @@
+"""
+
+
+Nina is working on a project involving multiple sensors. Each sensor provides a data point that needs to be processed to compute an aggregated value. 
+
+
+
+Given data points from three sensors, write a program to calculate the aggregated value using specific bitwise operations and arithmetic manipulations. The final result should be the aggregated value modulo 1000.
+
+
+
+Example:
+
+Input:
+
+1 //sensor 1 data
+
+2 //sensor 2 data
+
+3 //sensor 3 data
+
+Output
+
+9
+
+Explanation
+
+Calculate the bitwise AND of sensor 1 data and sensor 2 data: 0
+
+Calculate the XOR of the result from step 1 and sensor 3 data: 3
+
+Multiply the result from step 2 by 3: 9
+
+Compute the final aggregated value by taking the result from step 3 modulo 1000: 9
+
+So, the aggregated value is 9.
+
+Input format :
+The first line of input consists of an integer S1, representing sensor1 data.
+
+The second line of input consists of an integer S2, representing sensor2 data.
+
+The third line of input consists of an integer S3, representing sensor3 data.
+
+Output format :
+The output displays an integer representing the aggregated value """
+
+# You are using Python
+a = int(input())
+b = int(input())
+c = int(input())
+
+and_result = a & b 
+xor_result = and_result ^ c
+multipied_result = xor_result * 3
+aggregated_value = multipied_result % 1000
+
+print(aggregated_value)
